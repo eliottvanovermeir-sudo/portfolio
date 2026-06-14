@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliott VANOVERMEIR - Portfolio Ingénieur Industriel</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lightbox.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -98,10 +99,16 @@
                         <div class="project-icon">🔧</div>
                         <h4>Coffret pompe de transfert</h4>
                         <p class="project-tech">Excel • Notes de calculs • Fiches techniques</p>
+                        <div class="project-image-thumb">
+                            <img src="images/coffret-pompe-1.jpg" alt="Afficheur JM CONCEPT">
+                        </div>
                         <div class="project-description">
                             Conception d'un coffret électrique destiné à la commande automatisée des pompes de transfert d'une centrale EDF en milieu isolé.
                             <br><br>
                             <strong>Missions :</strong> Dimensionnement électrique, notes de calcul, choix des composants (protections, organes de commande, alimentation) et paramétrage des équipements pour garantir un fonctionnement automatisé, fiable et sécurisé.
+                        </div>
+                        <div class="project-gallery-btn" onclick="openGallery('coffret-pompe')">
+                            📸 Voir galerie (3 photos)
                         </div>
                         <div class="project-tags">
                             <span>Électrique</span>
@@ -114,10 +121,16 @@
                         <div class="project-icon">🤖</div>
                         <h4>Olympiades Robotique FANUC</h4>
                         <p class="project-tech">FANUC • Robotique • Travail en équipe</p>
+                        <div class="project-image-thumb">
+                            <img src="images/fanuc-1.jpg" alt="Robot FANUC">
+                        </div>
                         <div class="project-description">
                             Participation à la <strong>finale des Olympiades FANUC</strong> – niveau Bac+3.
                             <br><br>
                             <strong>Missions :</strong> Conception et programmation des séquences robotiques pour un prototype fonctionnel répondant au cahier des charges, adaptation en temps réel aux contraintes techniques et résolution de défis de haut niveau.
+                        </div>
+                        <div class="project-gallery-btn" onclick="openGallery('fanuc')">
+                            📸 Voir galerie (2 photos)
                         </div>
                         <div class="project-tags">
                             <span>Robotique</span>
@@ -139,10 +152,16 @@
                         <div class="project-icon">🔍</div>
                         <h4>Test et diagnostic d'un circuit électrique</h4>
                         <p class="project-tech">Diagnostic • Appareils de mesure • Procédure</p>
+                        <div class="project-image-thumb">
+                            <img src="images/test-circuit-1.jpg" alt="Circuit électrique">
+                        </div>
                         <div class="project-description">
                             Réalisation et suivi d'une procédure d'essai sur une maquette présentant plusieurs défaillances.
                             <br><br>
                             <strong>Missions :</strong> Application d'une procédure de test structurée pour identifier et analyser les dysfonctionnements, rédaction d'un compte-rendu détaillé avec analyse des racines des défaillances.
+                        </div>
+                        <div class="project-gallery-btn" onclick="openGallery('test-circuit')">
+                            📸 Voir galerie (2 photos)
                         </div>
                         <div class="project-tags">
                             <span>Diagnostic</span>
@@ -180,10 +199,16 @@
                         <div class="project-icon">❄️</div>
                         <h4>Armoire Clim centrale hydroélectrique</h4>
                         <p class="project-tech">Maintenance améliorative • Câblage • Diagnostic</p>
+                        <div class="project-image-thumb">
+                            <img src="images/armoire-clim-1.jpg" alt="Armoire climatisation">
+                        </div>
                         <div class="project-description">
                             Remplacement de l'armoire générale de climatisation à la centrale hydroélectrique EDF de Petit-Saut dans une démarche de maintenance améliorative.
                             <br><br>
                             <strong>Missions :</strong> Repérage des équipements, mise en service, câblage, vérification et dépannage lors de la mise en service.
+                        </div>
+                        <div class="project-gallery-btn" onclick="openGallery('armoire-clim')">
+                            📸 Voir galerie (3 photos)
                         </div>
                         <div class="project-tags">
                             <span>Maintenance</span>
@@ -196,10 +221,16 @@
                         <div class="project-icon">🏗️</div>
                         <h4>Maintenance d'un pont roulant</h4>
                         <p class="project-tech">Maintenance corrective • Procédure • Diagnostic</p>
+                        <div class="project-image-thumb">
+                            <img src="images/pont-roulant-1.jpg" alt="Pont roulant">
+                        </div>
                         <div class="project-description">
                             Maintenance corrective d'un pont roulant à la centrale EDF, suivi d'une procédure d'intervention structurée.
                             <br><br>
                             <strong>Missions :</strong> Diagnostic des dysfonctionnements, identification de la cause de panne, actions correctives et remise en service.
+                        </div>
+                        <div class="project-gallery-btn" onclick="openGallery('pont-roulant')">
+                            📸 Voir galerie (3 photos)
                         </div>
                         <div class="project-tags">
                             <span>Corrective</span>
@@ -253,6 +284,21 @@
         </div>
     </section>
 
+    <!-- Modal Galerie -->
+    <div id="galleryModal" class="gallery-modal">
+        <span class="gallery-close" onclick="closeGallery()">&times;</span>
+        <div class="gallery-content">
+            <img class="gallery-image" id="galleryImage" src="" alt="Galerie">
+            <div class="gallery-caption" id="galleryCaption"></div>
+            <div class="gallery-nav">
+                <button class="gallery-btn gallery-prev" onclick="changeGalleryImage(-1)">❮</button>
+                <span class="gallery-counter" id="galleryCounter"></span>
+                <button class="gallery-btn gallery-next" onclick="changeGalleryImage(1)">❯</button>
+            </div>
+            <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+        </div>
+    </div>
+
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
@@ -305,5 +351,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="lightbox.js"></script>
 </body>
 </html>
